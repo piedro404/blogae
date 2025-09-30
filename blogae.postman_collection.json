@@ -1,0 +1,2226 @@
+{
+	"info": {
+		"_postman_id": "6535b0c9-c019-49a3-b7bc-44c740440d52",
+		"name": "blogae",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36606064"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "users.store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pedro Henrique\",\n    \"email\": \"pedro.borges@alu.unibalsas.edu.br\",\n    \"password\": \"PEDROEROSA\",\n    \"passwordConfirmation\": \"PEDROEROSA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}users/",
+							"host": [
+								"{{base_url}}users"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Pedro Henrique\",\n    \"email\": \"pedro.borges@alu.unibalsas.edu.br\",\n    \"password\": \"PEDROEROSA\",\n    \"passwordConfirmation\": \"PEDROEROSA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}users/",
+									"host": [
+										"{{base_url}}users"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "344"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"158-4coLxS0D+q6YpareUUEIkoe/hyU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:19:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"externalId\": \"71e82b71-c9b1-47ce-bf97-70dd694c5efb\",\n        \"createdAt\": \"2025-09-30T01:19:25.312Z\",\n        \"updatedAt\": \"2025-09-30T01:19:25.312Z\",\n        \"name\": \"Pedro Henrique\",\n        \"email\": \"pedro.borges@alu.unibalsas.edu.br\",\n        \"password\": \"$2b$10$MdpGrF9pdmGU8a16W0ZbZerPCbSnB6LOUe.Wi8tM7ZAGEaEHVkLlS\"\n    }\n}"
+						},
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Pedro Henrique\",\n    \"email\": \"pedro.borges@alu.unibalsas.edu.br\",\n    \"password\": \"PEDROEROSA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}users/",
+									"host": [
+										"{{base_url}}users"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-0904rRuXNGjTLrVuZ0YQ0sv5BzY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:19:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Validation Error\",\n    \"errors\": [\n        \"passwordConfirmation: Required\"\n    ]\n}"
+						},
+						{
+							"name": "409",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Pedro Henrique\",\n    \"email\": \"pedro.borges@alu.unibalsas.edu.br\",\n    \"password\": \"PEDROEROSA\",\n    \"passwordConfirmation\": \"PEDROEROSA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}users/",
+									"host": [
+										"{{base_url}}users"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31-thCIlyfQfbVF7P50v7jAcwRO0sA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:19:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"User already exists!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "users.index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}users/",
+							"host": [
+								"{{base_url}}users"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}users/",
+									"host": [
+										"{{base_url}}users"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "346"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15a-SexorDK6LfGTnA+qAOW+TTtR08g\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:27:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Users retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"externalId\": \"71e82b71-c9b1-47ce-bf97-70dd694c5efb\",\n            \"createdAt\": \"2025-09-30T01:19:25.312Z\",\n            \"updatedAt\": \"2025-09-30T01:19:25.312Z\",\n            \"name\": \"Pedro Henrique\",\n            \"email\": \"pedro.borges@alu.unibalsas.edu.br\",\n            \"password\": \"$2b$10$MdpGrF9pdmGU8a16W0ZbZerPCbSnB6LOUe.Wi8tM7ZAGEaEHVkLlS\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "users.show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}users/1",
+							"host": [
+								"{{base_url}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}users/1",
+									"host": [
+										"{{base_url}}users"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "343"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"157-6pBdxDeDMsD10S7152UB86KebDk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:34:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"externalId\": \"71e82b71-c9b1-47ce-bf97-70dd694c5efb\",\n        \"createdAt\": \"2025-09-30T01:19:25.312Z\",\n        \"updatedAt\": \"2025-09-30T01:19:25.312Z\",\n        \"name\": \"Pedro Henrique\",\n        \"email\": \"pedro.borges@alu.unibalsas.edu.br\",\n        \"password\": \"$2b$10$MdpGrF9pdmGU8a16W0ZbZerPCbSnB6LOUe.Wi8tM7ZAGEaEHVkLlS\"\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}users/1",
+									"host": [
+										"{{base_url}}users"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "358"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"166-9YXADT/+tUux6dtswnqZFmBZZhk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:36:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"externalId\": \"71e82b71-c9b1-47ce-bf97-70dd694c5efb\",\n        \"createdAt\": \"2025-09-30T01:19:25.312Z\",\n        \"updatedAt\": \"2025-09-30T01:36:14.838Z\",\n        \"name\": \"Pedro Henrique Martins Borges\",\n        \"email\": \"pedro.borges@alu.unibalsas.edu.br\",\n        \"password\": \"$2b$10$MdpGrF9pdmGU8a16W0ZbZerPCbSnB6LOUe.Wi8tM7ZAGEaEHVkLlS\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "users.update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pedro Henrique Martins Borges\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}users/1",
+							"host": [
+								"{{base_url}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Pedro Henrique Martins Borges\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}users/1",
+									"host": [
+										"{{base_url}}users"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "356"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"164-8w1NIODRWAhNI+IaqzHqZkxlyU8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:36:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"externalId\": \"71e82b71-c9b1-47ce-bf97-70dd694c5efb\",\n        \"createdAt\": \"2025-09-30T01:19:25.312Z\",\n        \"updatedAt\": \"2025-09-30T01:36:14.838Z\",\n        \"name\": \"Pedro Henrique Martins Borges\",\n        \"email\": \"pedro.borges@alu.unibalsas.edu.br\",\n        \"password\": \"$2b$10$MdpGrF9pdmGU8a16W0ZbZerPCbSnB6LOUe.Wi8tM7ZAGEaEHVkLlS\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "users.destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}users/1",
+							"host": [
+								"{{base_url}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}users/1",
+									"host": [
+										"{{base_url}}users"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-Lch//JEdeh3rQke/0geafI+77NA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:38:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "categories.store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Life\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}categories/",
+							"host": [
+								"{{base_url}}categories"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Games\",\n    \"description\": \"Postes sobre jogos e videogames no geral!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}categories/",
+									"host": [
+										"{{base_url}}categories"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "279"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"117-aXWXxWOX+SMo82L3/FCm8nLr9KQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:48:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Category registered successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"externalId\": \"9505318b-bcc1-4b13-88de-5b08317140fc\",\n        \"createdAt\": \"2025-09-30T01:48:54.374Z\",\n        \"updatedAt\": \"2025-09-30T01:48:54.374Z\",\n        \"name\": \"Games\",\n        \"description\": \"Postes sobre jogos e videogames no geral!\"\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Life\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}categories/",
+									"host": [
+										"{{base_url}}categories"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "239"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ef-W8r7Ef5YRGH/CvJucbVQ+dUy5Ss\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:49:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Category registered successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"externalId\": \"224adfb5-5ba3-495f-a42a-d02bef96b597\",\n        \"createdAt\": \"2025-09-30T01:49:31.499Z\",\n        \"updatedAt\": \"2025-09-30T01:49:31.499Z\",\n        \"name\": \"Life\",\n        \"description\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "categories.index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}categories/",
+							"host": [
+								"{{base_url}}categories"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}categories/",
+									"host": [
+										"{{base_url}}categories"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "454"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c6-LEm3iN8fJcqzH8+RuX1cBYfsNIc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:49:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Categories retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"externalId\": \"9505318b-bcc1-4b13-88de-5b08317140fc\",\n            \"createdAt\": \"2025-09-30T01:48:54.374Z\",\n            \"updatedAt\": \"2025-09-30T01:48:54.374Z\",\n            \"name\": \"Games\",\n            \"description\": \"Postes sobre jogos e videogames no geral!\"\n        },\n        {\n            \"id\": 2,\n            \"externalId\": \"224adfb5-5ba3-495f-a42a-d02bef96b597\",\n            \"createdAt\": \"2025-09-30T01:49:31.499Z\",\n            \"updatedAt\": \"2025-09-30T01:49:31.499Z\",\n            \"name\": \"Life\",\n            \"description\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "categories.show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}categories/1",
+							"host": [
+								"{{base_url}}categories"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}categories/1",
+									"host": [
+										"{{base_url}}categories"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "278"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"116-GAaxZdnHFKXS9QfWeXsHvyJ4wFs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:49:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Category retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"externalId\": \"9505318b-bcc1-4b13-88de-5b08317140fc\",\n        \"createdAt\": \"2025-09-30T01:48:54.374Z\",\n        \"updatedAt\": \"2025-09-30T01:48:54.374Z\",\n        \"name\": \"Games\",\n        \"description\": \"Postes sobre jogos e videogames no geral!\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "categories.update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dia-a-Dia\",\n    \"description\": \"Fale sobre seu Dia-a-Dia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}categories/2",
+							"host": [
+								"{{base_url}}categories"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Dia-a-Dia\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}categories/2",
+									"host": [
+										"{{base_url}}categories"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f1-m+Oo5wotZTzN7T7YhyrmNhEv9Us\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:50:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Category updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"externalId\": \"224adfb5-5ba3-495f-a42a-d02bef96b597\",\n        \"createdAt\": \"2025-09-30T01:49:31.499Z\",\n        \"updatedAt\": \"2025-09-30T01:50:03.256Z\",\n        \"name\": \"Dia-a-Dia\",\n        \"description\": null\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Dia-a-Dia\",\n    \"description\": \"Fale sobre seu Dia-a-Dia\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}categories/2",
+									"host": [
+										"{{base_url}}categories"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"107-s4la2JgH0P0tL0oBu+7d5cRyhqg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:50:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Category updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"externalId\": \"224adfb5-5ba3-495f-a42a-d02bef96b597\",\n        \"createdAt\": \"2025-09-30T01:49:31.499Z\",\n        \"updatedAt\": \"2025-09-30T01:50:50.155Z\",\n        \"name\": \"Dia-a-Dia\",\n        \"description\": \"Fale sobre seu Dia-a-Dia\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "categories.destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}categories/2",
+							"host": [
+								"{{base_url}}categories"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}categories/2",
+									"host": [
+										"{{base_url}}categories"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "57"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39-SOgQHDirJ32WkxF1RiWLs/OLig0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 01:51:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Category deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "posts.store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Explorando o mundo de Minecraft\",\n  \"content\": \"Dicas para construir bases, minerar recursos e sobreviver no vasto mundo de Minecraft.\",\n  \"authorId\": 1,\n  \"categoryId\": 1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}posts/",
+							"host": [
+								"{{base_url}}posts"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Guia completo de Valorant\",\n  \"content\": \"Descubra as melhores estratégias, agentes e mapas do Valorant para melhorar seu desempenho no jogo.\",\n  \"authorId\": 1,\n  \"categoryId\": 1\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}posts/",
+									"host": [
+										"{{base_url}}posts"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "379"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17b-T4JDRm3tHQocOcq9pG1zU9DSY4Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 02:04:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Post registered successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"externalId\": \"cd4b703c-5ae5-4693-a844-a00960fba136\",\n        \"createdAt\": \"2025-09-30T02:04:36.240Z\",\n        \"updatedAt\": \"2025-09-30T02:04:36.240Z\",\n        \"title\": \"Guia completo de Valorant\",\n        \"content\": \"Descubra as melhores estratégias, agentes e mapas do Valorant para melhorar seu desempenho no jogo.\",\n        \"authorId\": 1,\n        \"categoryId\": 1\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Explorando o mundo de Minecraft\",\n  \"content\": \"Dicas para construir bases, minerar recursos e sobreviver no vasto mundo de Minecraft.\",\n  \"authorId\": 1,\n  \"categoryId\": 1\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}posts/",
+									"host": [
+										"{{base_url}}posts"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "371"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"173-0vScSf31rI13IJ6HXnnCI00SN8k\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 02:05:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Post registered successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"externalId\": \"968ae877-debd-4b03-b883-92e45343e237\",\n        \"createdAt\": \"2025-09-30T02:05:07.583Z\",\n        \"updatedAt\": \"2025-09-30T02:05:07.583Z\",\n        \"title\": \"Explorando o mundo de Minecraft\",\n        \"content\": \"Dicas para construir bases, minerar recursos e sobreviver no vasto mundo de Minecraft.\",\n        \"authorId\": 1,\n        \"categoryId\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "posts.index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}posts/",
+							"host": [
+								"{{base_url}}posts"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}posts/",
+									"host": [
+										"{{base_url}}posts"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "381"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17d-r8Qvj2fdvWcGsF7o1kF4weeAqGA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 02:04:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Posts retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"externalId\": \"cd4b703c-5ae5-4693-a844-a00960fba136\",\n            \"createdAt\": \"2025-09-30T02:04:36.240Z\",\n            \"updatedAt\": \"2025-09-30T02:04:36.240Z\",\n            \"title\": \"Guia completo de Valorant\",\n            \"content\": \"Descubra as melhores estratégias, agentes e mapas do Valorant para melhorar seu desempenho no jogo.\",\n            \"authorId\": 1,\n            \"categoryId\": 1\n        }\n    ]\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}posts/",
+									"host": [
+										"{{base_url}}posts"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "689"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b1-zmeIbZ7KHwf66UjM9ovFWCo+W/k\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 02:05:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Posts retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"externalId\": \"cd4b703c-5ae5-4693-a844-a00960fba136\",\n            \"createdAt\": \"2025-09-30T02:04:36.240Z\",\n            \"updatedAt\": \"2025-09-30T02:04:36.240Z\",\n            \"title\": \"Guia completo de Valorant\",\n            \"content\": \"Descubra as melhores estratégias, agentes e mapas do Valorant para melhorar seu desempenho no jogo.\",\n            \"authorId\": 1,\n            \"categoryId\": 1\n        },\n        {\n            \"id\": 2,\n            \"externalId\": \"968ae877-debd-4b03-b883-92e45343e237\",\n            \"createdAt\": \"2025-09-30T02:05:07.583Z\",\n            \"updatedAt\": \"2025-09-30T02:05:07.583Z\",\n            \"title\": \"Explorando o mundo de Minecraft\",\n            \"content\": \"Dicas para construir bases, minerar recursos e sobreviver no vasto mundo de Minecraft.\",\n            \"authorId\": 1,\n            \"categoryId\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "posts.show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}posts/2",
+							"host": [
+								"{{base_url}}posts"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}posts/2",
+									"host": [
+										"{{base_url}}posts"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "370"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"172-LKEy517gcHszEQAtvYALjGv/7Ts\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 02:05:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Post retrieved successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"externalId\": \"968ae877-debd-4b03-b883-92e45343e237\",\n        \"createdAt\": \"2025-09-30T02:05:07.583Z\",\n        \"updatedAt\": \"2025-09-30T02:05:07.583Z\",\n        \"title\": \"Explorando o mundo de Minecraft\",\n        \"content\": \"Dicas para construir bases, minerar recursos e sobreviver no vasto mundo de Minecraft.\",\n        \"authorId\": 1,\n        \"categoryId\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "posts.update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Explorando o mundo de Minecraft Hardcore\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}posts/2",
+							"host": [
+								"{{base_url}}posts"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Explorando o mundo de Minecraft Hardcore\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}posts/2",
+									"host": [
+										"{{base_url}}posts"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "377"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"179-Z94nw6lCDIP55ZSS9ptm4VsQIoU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 02:05:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Post updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"externalId\": \"968ae877-debd-4b03-b883-92e45343e237\",\n        \"createdAt\": \"2025-09-30T02:05:07.583Z\",\n        \"updatedAt\": \"2025-09-30T02:05:42.550Z\",\n        \"title\": \"Explorando o mundo de Minecraft Hardcore\",\n        \"content\": \"Dicas para construir bases, minerar recursos e sobreviver no vasto mundo de Minecraft.\",\n        \"authorId\": 1,\n        \"categoryId\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "posts.destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}posts/1",
+							"host": [
+								"{{base_url}}posts"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}posts/1",
+									"host": [
+										"{{base_url}}posts"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-UOvCPkiy4qbWR4jwRV1e39SGkaI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Sep 2025 02:05:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Post deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "home",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}",
+							"host": [
+								"{{base_url}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "284"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11c-EFjHH+Vprvc9/Z+79zlfBW6AAtc\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 30 Sep 2025 00:49:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"API is running\",\n    \"data\": {\n        \"name\": \"blogAE\",\n        \"version\": \"1.0.0\",\n        \"description\": \"API para um blog simples\",\n        \"authors\": [\n            {\n                \"name\": \"Pedro Henrique Martins Borges\",\n                \"github\": \"https://github.com/piedro404\",\n                \"picture\": \"https://avatars.githubusercontent.com/u/88720549?v=4\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost/api/"
+		}
+	]
+}
