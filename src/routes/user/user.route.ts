@@ -1,6 +1,5 @@
 import { store, index, show, update, destroy } from '@controllers/user.controller';
 import { Router, Request, Response, NextFunction } from 'express';
-import { get } from 'http';
 
 const router = Router();
 

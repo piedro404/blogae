@@ -1,4 +1,4 @@
-import { store, index, show, update, destroy } from '@controllers/category.controller';
+import { store, index, show, update, destroy } from '@controllers/post.controller';
 import { Router, Request, Response, NextFunction } from 'express';
 
 const router = Router();
