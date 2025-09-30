@@ -1,32 +1,28 @@
 import { Request, Response, NextFunction, response } from 'express';
 import { logger } from '../config/logger.js';
 import { success } from 'src/utils/response.js';
-import { RegisterRequest, registerSchema } from 'src/schemas/auth.schema.js';
+import { UserRequest, userSchema } from 'src/schemas/auth.schema.js';
 import { prismaClient } from '@config/database.js';
 import { CustomError } from 'src/exceptions/customError.js';
 import { HTTP_STATUS } from 'src/utils/constants.js';
 import { hashPassword } from 'src/utils/encryption.js';
+import { UserRepository } from 'src/repository/user.repository.js';
 
-export async function signup(
+export async function store(
   req: Request,
   res: Response,
   next: NextFunction
 ) {
   try {
-    const registerData: RegisterRequest = registerSchema.parse(req.body);
+    const userData: UserRequest = userSchema(false).parse(req.body);
 
-    let user = await prismaClient.user.findFirst({where: {email: registerData.email}})
+    let user = await UserRepository.findByEmail(userData.email!);
     if (user) {
-      throw new CustomError("User already exists!", HTTP_STATUS.NOT_FOUND);
+      throw new CustomError("User already exists!", HTTP_STATUS.CONFLICT);
     }
 
-    user = await prismaClient.user.create({
-      data: {
-        name: registerData.name,
-        email: registerData.email,
-        password: await hashPassword(registerData.password),
-      }
-    })
+    userData.password = await hashPassword(userData.password!);
+    user = await UserRepository.createUser(userData);
 
     return res.json(success('User registered successfully', user));
   } catch (err) {

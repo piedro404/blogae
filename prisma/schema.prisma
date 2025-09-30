@@ -17,5 +17,39 @@ model User {
   email      String   @unique
   password   String
 
+  posts      Post[]
+
   @@map("users")
+}
+
+model Category {
+  id         Int      @id @default(autoincrement())
+  externalId String   @unique @default(uuid()) @map("external_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  name       String
+  description String?
+
+  posts      Post[]
+
+  @@map("categories")
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  externalId  String   @unique @default(uuid()) @map("external_id")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  title       String
+  content     String
+
+  authorId    Int      @map("author_id")
+  author      User     @relation(fields: [authorId], references: [id])
+
+  categoryId  Int?     @map("category_id")
+  category    Category? @relation(fields: [categoryId], references: [id])
+
+  @@map("posts")
 }
