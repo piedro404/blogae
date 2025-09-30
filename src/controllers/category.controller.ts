@@ -87,10 +87,6 @@ export async function update(
       }
     }
 
-    if (categoryData.description) {
-      categoryData.description = await hashPassword(categoryData.description);
-    }
-
     const updatedCategory = await CategoryRepository.updateCategory(categoryId, categoryData);
 
     return res.json(success('Category updated successfully', updatedCategory));
