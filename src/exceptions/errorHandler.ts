@@ -6,7 +6,11 @@ import { z } from 'zod';
 
 export function errorHandler(err: any, req: Request, res: Response, next: NextFunction) {
   if (err instanceof z.ZodError) {
-    return res.status(422).json(failure('Validation Error', err.errors.map(issue => issue.message)));
+    const errors = err.errors.map(issue => {
+      const field = issue.path.length > 0 ? issue.path.join('.') : 'Não foi encontrados nenhum campo';
+      return `${field}: ${issue.message}`;
+    });
+    return res.status(422).json(failure('Validation Error', errors));
   }
   
   if (err instanceof CustomError) {

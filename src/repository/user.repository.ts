@@ -1,5 +1,5 @@
 import { prismaClient } from "@config/database";
-import { UserRequest } from "src/schemas/auth.schema";
+import { UserRequest } from "src/schemas/user.schema";
 import { hashPassword } from "src/utils/encryption";
 
 export class UserRepository {
