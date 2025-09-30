@@ -3,21 +3,21 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite" 
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id         Int   @id @default(autoincrement())
+  id         Int      @id @default(autoincrement())
   externalId String   @unique @default(uuid()) @map("external_id")
   createdAt  DateTime @default(now()) @map("created_at")
   updatedAt  DateTime @updatedAt @map("updated_at")
-  
-  name       String
-  email      String   @unique
-  password   String
 
-  posts      Post[]
+  name     String
+  email    String @unique
+  password String
+
+  posts Post[]
 
   @@map("users")
 }
@@ -28,28 +28,28 @@ model Category {
   createdAt  DateTime @default(now()) @map("created_at")
   updatedAt  DateTime @updatedAt @map("updated_at")
 
-  name       String
+  name        String  @unique
   description String?
 
-  posts      Post[]
+  posts Post[]
 
   @@map("categories")
 }
 
 model Post {
-  id          Int      @id @default(autoincrement())
-  externalId  String   @unique @default(uuid()) @map("external_id")
-  createdAt   DateTime @default(now()) @map("created_at")
-  updatedAt   DateTime @updatedAt @map("updated_at")
+  id         Int      @id @default(autoincrement())
+  externalId String   @unique @default(uuid()) @map("external_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
 
-  title       String
-  content     String
+  title   String
+  content String
 
-  authorId    Int      @map("author_id")
-  author      User     @relation(fields: [authorId], references: [id])
+  authorId Int  @map("author_id")
+  author   User @relation(fields: [authorId], references: [id])
 
-  categoryId  Int?     @map("category_id")
-  category    Category? @relation(fields: [categoryId], references: [id])
+  categoryId Int?      @map("category_id")
+  category   Category? @relation(fields: [categoryId], references: [id])
 
   @@map("posts")
 }

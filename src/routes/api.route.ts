@@ -1,6 +1,7 @@
 import { home } from '@controllers/app.controller';
 import { Router, Request, Response, NextFunction } from 'express';
 import userRouter from './user/user.route';
+import categoryRouter from './category/category.route';
 
 const router = Router();
 
@@ -9,5 +10,6 @@ router.get('/', (req: Request, res: Response, next: NextFunction) => {
 });
 
 router.use('/users', userRouter);
+router.use('/categories', categoryRouter);
 
 export default router;
