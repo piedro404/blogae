@@ -1,12 +1,9 @@
 import { Request, Response, NextFunction, response } from 'express';
 import { logger } from '../config/logger.js';
 import { success } from 'src/utils/response.js';
-import { UserRequest, userSchema } from 'src/schemas/user.schema.js';
-import { prismaClient } from '@config/database.js';
 import { CustomError } from 'src/exceptions/customError.js';
 import { HTTP_STATUS } from 'src/utils/constants.js';
-import { hashPassword } from 'src/utils/encryption.js';
-import { CategoryRepository } from 'src/repository/category.repository.js';
+import CategoryRepository from 'src/repository/category.repository.js';
 import { CategoryRequest, categorySchema } from 'src/schemas/category.schema.js';
 
 export async function store(

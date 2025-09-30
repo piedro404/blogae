@@ -6,7 +6,7 @@ import { prismaClient } from '@config/database.js';
 import { CustomError } from 'src/exceptions/customError.js';
 import { HTTP_STATUS } from 'src/utils/constants.js';
 import { hashPassword } from 'src/utils/encryption.js';
-import { UserRepository } from 'src/repository/user.repository.js';
+import UserRepository from 'src/repository/user.repository.js';
 
 export async function store(
   req: Request,

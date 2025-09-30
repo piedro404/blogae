@@ -1,8 +1,7 @@
 import { prismaClient } from "@config/database";
 import { CategoryRequest } from "src/schemas/category.schema";
-import { UserRequest } from "src/schemas/user.schema";
 
-export class CategoryRepository {
+export default class CategoryRepository {
   static async findAll() {
     return await prismaClient.category.findMany();
   }

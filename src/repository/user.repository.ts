@@ -1,8 +1,7 @@
 import { prismaClient } from "@config/database";
 import { UserRequest } from "src/schemas/user.schema";
-import { hashPassword } from "src/utils/encryption";
 
-export class UserRepository {
+export default class UserRepository {
   static async findAll() {
     return await prismaClient.user.findMany();
   }
